@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dice Game</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
+	</head>
+	
+	<body>
+		<img  class="tdg1" src="startgame.png"/>	
+		<h1 id="winner"></h1>
+		
+	<div class="box">
+		<div class="dices">
+		<p class="p1">PLAYER 1</p>
+			<img class="player1dice" id="dc" />	
+				
+		</div>
+		
+		<div class="dices">
+		<p class="p2">PLAYER 2</p>
+			<img class="player1dice" id="dc1" />	
+		</div>
+	</div>
+<input class="btnroll" type="button" value='ROLL !' onclick="diceroll()"/>
+	
+	
+	<script type="text/javascript"> 
+	
+	function diceroll() 
+	{
+
+		var rand= Math.floor(Math.random() * 6) + 1;
+		var diceimage1 = 'dice' + rand + '.png';
+		document.getElementById('dc').setAttribute('src',diceimage1);
+		
+		var rand2= Math.floor(Math.random() * 6) + 1;
+		var diceimage2 = 'dice' + rand2 + '.png';
+		document.getElementById('dc1').setAttribute('src',diceimage2);
+		
+		
+		
+		if (rand > rand2){
+			document.getElementById('winner').innerHTML = 'PLAYER 1 WINS !';
+		}
+		else if (rand < rand2){
+			document.getElementById('winner').innerHTML = 'PLAYER 2 WINS !';		
+		}	
+		else {
+			document.getElementById('winner').innerHTML = 'DRAW !';
+
+		}
+	}
+		
+	</script
+	</body>
+	
+	
+	
+</html>
